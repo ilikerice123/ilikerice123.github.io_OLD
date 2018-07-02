@@ -92,7 +92,7 @@
 
     <body>
         <div class="banner">
-
+            <div id = "pictures"></div>
         </div>
         <div class="topnav" id="main-menu">
             <div id="home" class="dropdown active">
@@ -154,16 +154,14 @@
                             imagewidth += data.data[i].images.standard_resolution.width;
                             i=(i+1)%numPics;
                         }
-                        var html;
+
                         images.forEach(function(imageSrc, index){
                             var a = new Image();
                             a.src = imageSrc;
                             a.onload=function(){$(a).fadeIn(500);}
                             a.style.display="none";
-                            html.appendChild(a);
+                            $("#pictures").appendChild(a);
                         });
-
-                        $(".banner").html(html);
                     },
                     fail: function(){
                         alert("failed to get instagram picture");
