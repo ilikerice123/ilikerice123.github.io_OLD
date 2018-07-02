@@ -83,10 +83,9 @@
         <div class="banner">
 
         </div>
-        <div class="topnav" id="myTopnav">
-            
+        <div class="topnav" id="main-menu">
             <div id="home" class="dropdown active">
-                <div class="dropdown-text">
+                <div id="home-text" class="dropdown-text">
                     Home
                 </div>
             </div>
@@ -127,20 +126,25 @@
         
         <script>
             $(function(){
-                var a
-                $("#home").click(function(){
+                $.get("https://api.instagram.com/v1/users/self/media/recent/?access_token=3910705822.8cada28.a4244707afc34c90b8a2c751c1cfef49", function(data){
+                    alert(data);
+                })
+                $("#home-text").click(function(){
                     $.ajax({
-                    type:'GET',
-                    dataType: "json",
-                    //I guess other people can see this access token but whatever, it wasn't too hard to get, also this only gets my own pictures sooooo
-                    url: "https://api.instagram.com/v1/users/self/media/recent/?access_token=3910705822.8cada28.a4244707afc34c90b8a2c751c1cfef49",
-                    success: function(data){
-                        alert(data);
-                    },
-                    fail: function(){
-                        alert("something bad happened");
-                    }
-
+                        type:'GET',
+                        dataType: 'json',
+                        //I guess other people can see this access token but whatever, it wasn't too hard to get, also this only gets my own pictures sooooo
+                        url: "https://api.instagram.com/v1/users/self/media/recent/?access_token=3910705822.8cada28.a4244707afc34c90b8a2c751c1cfef49",
+                        success: function(data){
+                            alert(data);
+                            $("#main-menu").append(data);
+                        },
+                        fail: function(){
+                            alert("something bad happened");
+                        },
+                        complete: function(){
+                            alert("done");
+                        }
                     })
                     /*var img = $("<img />").attr('src', 'http://somedomain.com/image.jpg').on('load', function() {
                         if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
@@ -151,6 +155,8 @@
                     });
                     */
                 })
+
+                
 
             })
         </script>
