@@ -144,7 +144,7 @@
                     success: function(data){
                         //get as many images as we need to fill up the width of the screen
                         var numPics = data.data.length;
-                        var i = Math.random()%numPics;
+                        var i = Math.floor(Math.random()%numPics);
                         var windowwidth = $(window).width();
                         var imagewidth = 0;
                         var images = [];
