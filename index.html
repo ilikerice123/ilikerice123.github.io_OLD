@@ -25,6 +25,8 @@
                 position: relative;
                 top: 50%;
                 transform: translateY(-50%);
+                float:left;
+                margin:0;
             }
             
             .topnav {
@@ -140,9 +142,23 @@
                     //I guess other people can see this access token but whatever, it wasn't too hard to get, also this only gets my own pictures sooooo
                     url: "https://api.instagram.com/v1/users/self/media/recent/?access_token=3910705822.8cada28.a4244707afc34c90b8a2c751c1cfef49",
                     success: function(data){
-                        var imglink = data.data[0].images.standard_resolution.url;
-                        var imgcaption = data.data[0].caption.text;
-                        $(".banner").html('<img src= "' + imglink + '" alt="' + imgcaption + '"/>');
+                        //get as many images as we need to fill up the width of the screen
+                        var numPics = data.data.length;
+                        var i = Math.random()%numPics;
+                        var windowwidth = $(window).width();
+                        var imagewidth = 0;
+                        var images = [];
+                        while(imagewidth < windowwidth){
+                            images.push(data.data[i].images.standard_resolution.url);
+                            imagewidth += data.data[i].images.standard_resolution.width;
+                            i=(i+1)%numPics;
+                        }
+                        var html;
+                        images.forEach(function(imageSrc, index){
+                            html += '<img src= "' + imageSrc + '" alt="Problem loading IG pictures"/>';
+                        });
+
+                        $(".banner").html(html);
                     },
                     fail: function(){
                         alert("failed to get instagram picture");
