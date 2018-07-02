@@ -24,8 +24,8 @@
             .banner>img{
                 overflow:hide;
                 /*position: relative;*/
-                top: 66%;
-                transform: translateY(-66%);
+                top: 50%;
+                transform: translateY(-50%);
                 float:left;
                 margin:0;
             }
@@ -156,7 +156,11 @@
                         }
                         var html;
                         images.forEach(function(imageSrc, index){
-                            html += '<img src= "' + imageSrc + '" alt="Problem loading IG pictures"/>';
+                            var a = new Image();
+                            a.src = imageSrc;
+                            a.onload=function(){$(a).fadeIn(500);}
+                            a.style.display="none";
+                            html.appendChild(a);
                         });
 
                         $(".banner").html(html);
