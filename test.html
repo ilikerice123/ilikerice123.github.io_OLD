@@ -122,7 +122,20 @@
                 APPEAR!
             </div>
         </div>
-
+        <script>
+            $(function(){
+                $(".hover").click(function(){
+                    $.ajax({
+                        type:"Get",
+                        url:"https://api.instagram.com/v1/users/self/media/recent/?access_token=3910705822.8cada28.a4244707afc34c90b8a2c751c1cfef49",
+                        dataType: "json",
+                        success: function(data){
+                            alert(data);
+                        }
+                    })
+                })
+            })
+        </script>
     </body>
 
 </html>
