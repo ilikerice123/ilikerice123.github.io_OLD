@@ -134,7 +134,8 @@
                     url: "https://api.instagram.com/v1/users/self/media/recent/?access_token=3910705822.8cada28.a4244707afc34c90b8a2c751c1cfef49",
                     success: function(data){
                         var imglink = data.data[0].images.standard_resolution.url;
-                        alert(imglink);
+                        var imgcaption = data.data[0].caption.text;
+                        $(".banner").html('<img src= "' + imglink + '" alt="' + imgcaption + '"/>');
                     },
                     fail: function(){
                         alert("failed to get instagram picture");
