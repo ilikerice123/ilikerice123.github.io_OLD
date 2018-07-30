@@ -1,3 +1,12 @@
+<!-- this is for for debugging purposes only since main page uses ajax
+<head>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <script src="../jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+</head>
+-->
 
 <style>
     .welcomeBody{
@@ -8,8 +17,55 @@
         margin-bottom:100px;
         height:fit-content;
     }
+
+    .blog-entry{
+        width:90%;
+        height:fit-content;
+        margin-top:30px;
+        border:1px black solid;
+        padding:-1px;
+    }
+
+    .blog-title{
+        width:100%;
+        height:fit-content;
+        padding:10px;
+        font-size: 20px;
+    }
+
+    .blog-content{
+        width:100%;
+        height:fit-content;
+        padding:20px;
+    }
+
+    .blog-date-stamp{
+        padding:10px;
+        margin:-1px;
+        border:1px black solid;
+    }
 </style>
 
 <div class="welcomeBody">
-    <p>This is a test</p>
+    <div id="blogContent">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="blog-entry">
+                    <div class="blog-title">
+                        Hello
+                    </div>
+                    <div class="blog-content">
+                        Hello pt 2
+                    </div>
+                    <div class="blog-date-stamp">
+                        July 30, 2018
+                    </div>
+                </div>
+            </div>
+            <div id="menu" class="col-md-3">
+                I know this is a really ugly blog format, but this will 
+                have to do for now. 
+            </div>
+        </div>
+    </div>
 </div>
