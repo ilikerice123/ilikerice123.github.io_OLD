@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
+    <meta charset="UTF-8">
     <head>
         <!-- where I define my css files and title right?-->
         <title>Your Average UBC Undergrad</title>
@@ -13,8 +14,9 @@
             body {
                 margin:0;
                 font-family:Arial;
+                letter-spacing: 0.5px;
+                line-height:1.5;
                 overflow-x:hidden;
-                background-color:rgb(206, 230, 231);
             }
 
             .banner{
@@ -134,12 +136,17 @@
                 text-align: left;
             }
 
-            .siteBody{
-                margin-left:100px;
-                margin-right:100px;
+            .dropdown-content a:hover{
+                background-color:lightskyblue;
+            }
+
+            .welcomeBody{
+                background-color:rgb(206, 230, 231);
+                padding-top:40px;
+                padding-left:150px;
+                padding-right:150px;
                 margin-bottom:100px;
                 height:fit-content;
-                padding:40px;
             }
 
             /*deal with later*/
@@ -164,23 +171,28 @@
             h5 {
                 position:relative;
                 z-index:1;
+                margin-bottom:60px;
+                line-height: 1.5;
             }
 
             .note{
+                margin: 20px;
                 outline-offset:20px;
                 outline: 1px lightcyan solid;
                 background:white;
                 z-index:1;
                 overflow:visible;
+                margin-bottom:40px;
             }
 
             .note .note-band{
-                background-color:rgb(141, 191, 248);
+                background-color:rgba(141, 191, 248, 0.623);
                 width:100%;
                 position:relative;
                 transform:skewX(-35deg);
                 overflow:hidden;
                 font-size:30px;
+                opacity:1;
             }
 
             .note .note-band .text-area{
@@ -190,17 +202,44 @@
                 transform:skewX(35deg);
                 width:125%;
                 position:relative;
-                background-color:blue;
+                background-color:rgb(64, 146, 212);
                 color: white;
                 font-weight:400;
                 font-family: Montserrat, sans-serif;
-                left:0px; /*needs to match padding*/
             }
 
             .note-content{
                 font-size:20px;
                 padding:20px;
                 padding-left:50px;
+            }
+
+            .clickable-cards{
+                height:290px;
+                border-radius: 0px;
+                display:inline-block;
+            }
+
+            .clickable-cards .card-img-top{
+                width:100%;
+                border-radius:0px;
+                box-shadow:0px 0px 30px grey;
+            }
+
+            .clickable-cards .card-img-overlay{
+                padding:0px;
+
+            }
+            .card-img-overlay p{
+                padding:15px;
+            }
+            .card-img-overlay .card-title{
+                padding:20px;
+                opacity:0.95;
+                background-color:white;
+            }
+            .card-img-overlay .card-text{
+                color:white;
             }
         </style>
     </head>
@@ -235,7 +274,7 @@
                 </div>
                 <div class="dropdown-content">
                         <a href="#">Technical Projects</a>
-                        <a href="#">Journal</a>
+                        <a id="personalJournal" href="#">Journal</a>
                         <a href="#">Not sure what else to put here</a>
                 </div>
             </div>
@@ -252,55 +291,84 @@
             <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
         </div>
         
-        <div class="siteBody">
-
-            <h2><center>WELCOME</center></h2>
-            <hr>
-            <h5><i>A culmination of my projects, experiences, and reflections</i></h5>
-            <br>
-            
-            <div id="note" class="note">
-                <div id="noteRow" class="row" style="padding:0px">
-                    <div id="noteTitle" class="col-md-3" style="padding:0px">
-                        <div class="note-band"><div class="text-area">More than a resume</div></div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="note-content">
-                            I want this little space on the internet to be more than just a regurgitation of 
-                            everything that is listed on my resume. Instead, I hope that through a short stroll 
-                            through my website, you will be able to be personally acquainted with me, in more 
-                            than just a professional sense - &lt;EMOJI&gt;. 
+        <div id="siteBody">
+            <div class="welcomeBody">
+                <h2><center>WELCOME</center></h2>
+                <hr>
+                <h5><i>A culmination of my projects, experiences, and daily (hopefully) musings</i></h5>
+                <div id="note" class="note">
+                    <div id="noteRow" class="row" style="padding:0px">
+                        <div id="noteTitle" class="col-md-3" style="padding:0px">
+                            <div class="note-band"><div class="text-area">A place of mind - UBC</div></div>
                         </div>
+                        <div class="col-md-9">
+                            <div class="note-content">
+                                I want this little space on the internet to be more than just a bland 
+                                regurgitation of my resume. Instead, I hope that a short stroll 
+                                through my website will leave you to feel personally acquainted with who I
+                                am, in more than just a professional sense - 😉 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h5>
+                    I hope to achieve this through informal commentary on my technical aspirations, 
+                    as well as journal posts on interesting aspects of my non-professional daily life 
+                    (hopefully I keep them up this time, unlike the first year blog that I abandoned in my 
+                    second semester). 
+                </h5>
+                <h5>
+                    I hope you enjoy your stay, and will be intrigued enough to visit regularly! 
+                </h5>
+                <hr>
+            
+            </div>
+                <!--https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_card_deck&stacked=h-->
+            
+                
+            <div id ="status-cards" class="container mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-5">
+                        <div class="card clickable-cards" style="box-shadow: 0px 0px 50px grey;">
+                            <img class="card-img-top" src="images/IMG_20180520_101147_1.jpg" alt="card_image">
+                            <div class="card-img-overlay">
+                                <h4 class="card-title">Current Status<h4>
+                                <p style="height:100%" class="card-text">Currently doing my first work term at Statistics Canada 
+                                    here at the capital
+                                </p>
+                                
+                            </div>
+                        </div>        
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <div class="card clickable-cards">
+                            <img class="card-img-top" src="images/crane.jpg" alt="card_image">
+                            <div class="card-img-overlay" style="padding:0px">
+                                <h4 class="card-title">Website Status<h4>
+                                <p class="card-text">Struggling through mountains of css and trying to get
+                                    my journal seciton set up
+                                </p>
+                            </div>
+                        </div>        
                     </div>
                 </div>
             </div>
 
-            <div> <br>
+                <!-- h5>
+                    Thanks for reading till the end! click for confetti
+                </h5 -->
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
             <h5>
-                I hope to achieve this through informal commentary on my technical aspirations, as well as 
-                journal posts on interesting aspects of my non-professoinal daily life (hopefully I keep 
-                them up this time!). 
+                Tfw u struggle so hard on the css just to get it to look perfect for your own screen
+                resolution and the moment you resize it just a tiny bit the entire thing falls apart
+                😅
             </h5>
-            <h5>
-                I hope you enjoy your stay, and will be intrigued enough to visit regularly! 
-            </h5>
-            <h5>
-                STATUS: currently on coop at statcan
-            </h5>
-            <h5>
-                thanks for reading till the end! click for confetti
-            </h5>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <h5>
-                PS: STATIC SITES SUCK WILL LOOK AT MIGRATING MY SITE TO AN MVC .NET CORE APPLICATION, but
-                I'm too poor for hosting AHH
-            </h5> -->
-        </div>
         </div>
 
         <script>
@@ -357,7 +425,6 @@
                 $(window).resize(function(){
 
                 });
-                
                 setstrip();
                 function setstrip(){
                     var windowheight = window.innerHeight;
@@ -365,14 +432,28 @@
                     var tofit = $(".note-content").outerHeight();
                     $("#noteTitle").css("height", tofit + "px");
                     $(".note").css("height", tofit + "px");
-
-                    $(".note-band").css("height", $(document).height() + "px");
+                    $(".note-band").css("height", "1000px");
+                    $(".note-band").css("margin-left", "110px");
                     $(".note-band").css("top", "-" + offset + "px");
                     $(".note-band").css("left", "-" + offset + "px");
                     $(".text-area").css("top", offset + "px");
                     $(".text-area").css("height", $(".note").height());
                 }
 
+                $("#personalJournal").click(function(){
+                    $.ajax({
+                        type:'GET', //unfortunately, everything on this static site will be a get :((
+                        dataType: 'html',
+                        url: 'journal/1',
+                        success:function(data){
+                            $("#siteBody").empty();
+                            $("#siteBody").html(data);
+                        },
+                        fail:function(data){
+                            alert("failed to retrieve data");
+                        }
+                    })
+                })
             })
         </script>
     </body>
