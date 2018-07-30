@@ -258,7 +258,7 @@
                     Home
                 </div>
             </div>
-            <div class="dropdown">
+            <div id="academic" class="dropdown">
                 <div class="dropdown-text">
                     Academic
                 </div>
@@ -268,7 +268,7 @@
                         <a href="#">Coop</a>
                 </div>
             </div>
-            <div class="dropdown">
+            <div id="personal" class="dropdown">
                 <div class="dropdown-text">
                     Personal
                 </div>
@@ -278,7 +278,7 @@
                         <a href="#">Not sure what else to put here</a>
                 </div>
             </div>
-            <div class="dropdown">
+            <div id="contact-me" class="dropdown">
                 <div class="dropdown-text">
                     Contact Me
                 </div>
@@ -372,6 +372,31 @@
         </div>
 
         <script>
+            function setstrip(){
+                var windowheight = window.innerHeight;
+                var offset = $(".note-band").offset().top - ( $("#menu").offset().top + $("#menu").height());
+                var tofit = $(".note-content").outerHeight();
+                $("#noteTitle").css("height", tofit + "px");
+                $(".note").css("height", tofit + "px");
+                $(".note-band").css("height", "1000px");
+                $(".note-band").css("margin-left", "110px");
+                $(".note-band").css("top", "-" + offset + "px");
+                $(".note-band").css("left", "-" + offset + "px");
+                $(".text-area").css("top", offset + "px");
+                $(".text-area").css("height", $(".note").height());
+            }
+
+            function switchTab(i){
+                $(".dropdown").removeClass("active");
+                switch(i){
+                    case 0: $("#home").addClass("active"); break;
+                    case 1: $("#academic").addClass("active"); break;
+                    case 2: $("#personal").addClass("active"); break;
+                    case 3: $("#contact-me").addClass("active"); break;
+                }
+            }
+
+
             $(function(){
 
                 //load the ig pictures for the background
@@ -426,19 +451,6 @@
 
                 });
                 setstrip();
-                function setstrip(){
-                    var windowheight = window.innerHeight;
-                    var offset = $(".note-band").offset().top - ( $("#menu").offset().top + $("#menu").height());
-                    var tofit = $(".note-content").outerHeight();
-                    $("#noteTitle").css("height", tofit + "px");
-                    $(".note").css("height", tofit + "px");
-                    $(".note-band").css("height", "1000px");
-                    $(".note-band").css("margin-left", "110px");
-                    $(".note-band").css("top", "-" + offset + "px");
-                    $(".note-band").css("left", "-" + offset + "px");
-                    $(".text-area").css("top", offset + "px");
-                    $(".text-area").css("height", $(".note").height());
-                }
 
                 $("#personalJournal").click(function(){
                     $.ajax({
@@ -446,6 +458,7 @@
                         dataType: 'html',
                         url: 'journal/1.html',
                         success:function(data){
+                            switchTab(2);
                             $("#siteBody").empty();
                             $("#siteBody").html(data);
                         },
