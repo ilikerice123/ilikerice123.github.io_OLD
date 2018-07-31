@@ -68,6 +68,104 @@
             <div class="col-md-9">
                 <div class="blog-entry">
                     <div class="blog-title">
+                        Reviving an Old Project and the Perils of a Software Engineer
+                    </div>
+                    <div class="blog-content">
+                        <p>
+                            So last year, in an attempt to improve my net-worth to potential
+                            employers I fiddled around to make an android app to convince not 
+                            only coop companies but also myself that I'm at least a somewhat
+                            competent software engineer. My app was called "Track My Time", and
+                            basically what it would do is you would add places that you would 
+                            like to track, and using gps locations on your phone, it would try 
+                            and track how long you spend in each location. 
+                            <br>
+                            <br>
+                            This app actually worked quite well - it did what it was supposed to do,
+                            to my surprise, and was probably only off by only a few minutes after a 
+                            week of attending lectures. However, for some weird reason, it broke, maybe
+                            about a month into "finishing" it (cuz projects are never finished 😤),
+                            and since I had already found a coop and school was getting busy with 
+                            project deadlines coming up, I prompty forgot about it...until 3 days ago.
+                            <br>
+                            <br>
+                            I was on the train with a bunch of coworkers and I was showing them how my 
+                            app was supposed to work, and I was like "hey, for fun, I'm going to press
+                            the start tracking locations button. in the past this would have started
+                            the parselocationservice and started tracking your data!". Back then, I was 
+                            stupid and didn't know how to use the logging feature (log.cat) on android,
+                            so I toasted everything (LOL), which resulted in huge toasts filling up my 
+                            entire screen, and to my big surprise, these annoying toasts kept popping 
+                            up! It was like a miracle!
+                            <br>
+                            <br>
+                            The problem with my app before was that whenever someone swiped away the app,
+                            it would just force-close, and the service wouldn't persist, but for some 
+                            peculiar reason, that wasn't the case this time. So, now 3 days later, with 
+                            some spare time on my hands before I sleep, I decided to boot into linux and 
+                            open up my app and see if I can figure out what was wrong.
+                            <br>
+                            <br>
+                            Lemme just start off saying that, holy crap, me from one year ago was a fricken
+                            trooper. For the past 3 months, I've been writing code on a 3 monitor setup, 2 
+                            high resolution big monitors and one laptop screen. However, my laptop at home is 
+                            a mediocre 14in 1600x900 LOOOL. I have ABSOLUTELY no clue how I developed ANYTHING
+                            on this without pulling my hair out or developing some rare eye disease. I guess
+                            ignorance is bliss... now how am I supposed to go back to school now with only my 
+                            work laptop after my coop term ends??
+                            <br>
+                            <br>
+                            Picture for reference:
+                            <img src="../images/computer_screen.png" style="max-width:100%; max-height: 100%">
+                            <br>
+                            <br>
+                            The second thing I noticed was the ABSOLUTE mess that was my code. I have comments 
+                            thrown in haphazardly, some of them witty, some of them useful, but the majority of
+                            them were written without any forethought on how someone reading them in the future
+                            with no context of the situation might interpret them. There were many foreign 
+                            methods and concepts cooked into my code that I had no idea where to start. The 
+                            funny thing is, I distinctly remember younger me thinking "o man, look at these 
+                            comments that I'm writing, I'll be able to go back to this code at any time and 
+                            just pick up where I left off!". Honestly, how I felt looking at my code at that 
+                            moment was not that dissimilar to how a layman, after finding that their car broke
+                            down in the middle of the road, would feel when they open their car hood and a 
+                            hiss of steam rises out of it. Just like the layman, I have a general idea of 
+                            what all my classes do, but no specific details on how it does it. 
+                            <br>
+                            <br>
+                            Well after looking around and poking at the jumbled jenga that is my code, I realized
+                            that I had two classes doing the same thing. I had distinctly remembered one of these
+                            was deprecated, and I thought for sure I put a comment at the top saying which one was,
+                            but I could find no such thing. After tracing through my code, I realized that the
+                            service it was calling in fact didn't have any method to handle the location that
+                            was being passed into it. I checked the other class and it did, so guess what I did, 
+                            I copied it over from the other class and woop-d-doo it seems my app has spluttered 
+                            to a start again and is now noisily idling at the side of the road, waiting for me to 
+                            drive it until it breaks again. :D 
+                            <br>
+                            <br>
+                            I guess the main takeaway for this is that not only should I write CLEAN code, and 
+                            comment regularly, I have to write THOUGHTFUL and CONCISE comments as well. Nobody 
+                            (including myself who wrote the code even) wants to slog through paragraphs of incoherent
+                            commented text to hear the ramblings of a sleep-deprived cpen student. Comments in 
+                            source code should be for the code itself. Save everything else for blogs (like this!).
+                            <br>
+                            <br>
+                            As an afterthought: When opened my app, I noticed that in my android manifest file, since I declared my app
+                            for a certain version of android api, a lot of the things were deprecated, or the 
+                            ide encouraged me to update my classes and such to use the latest features. This got me 
+                            thinking: even though my app could be in a finished and working state now, if I don't 
+                            keep up with the constant updates and upgrades that android receives, my app is going
+                            to be dead in maybe as little as a year. Thus is the life of a software engineer 
+                            designing solutions to problems on a continously evolving platform.  
+                        </p>
+                    </div>
+                    <div class="blog-date-stamp">
+                            July 30, 2018
+                    </div>
+                </div>
+                <div class="blog-entry">
+                    <div class="blog-title">
                         Getting Settled
                     </div>
                     <div class="blog-content">
