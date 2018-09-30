@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--<span class="sr-only">(current)</span>-->
+<html lang="en-US">
+    <meta charset="UTF-8">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <style>
+          body{
+            font-family: Arial, Helvetica, sans-serif;
+            /*font-family: 'Roboto', sans-serif;*/
+            min-height:1000px;
+            background-color:grey;
+          }
+
+          #menu.menu-top {
+            /*xpos, ypos, blur, spread, color*/
+            box-shadow: inset 0px 120px 150px -90px rgb(0, 4, 29);
+            background-color:transparent;
+            max-height:90px;
+            transition: max-height 0.25s linear;
+          }
+
+          #menu.menu-follow{
+            background-color:white;
+            box-shadow: 0px 0px 5px 1px rgb(37, 37, 37);
+            position:fixed;
+            left:0px;
+            top:0px;
+            width:100%;
+            max-height:65px;
+            transition: max-height 0.3s linear;
+          }
+
+          #menu.menu-top>.navbar-brand{
+            margin-top:30px;
+            margin-bottom:15px;
+            transition:margin 0.25s linear;
+          }
+          #menu.menu-top>.navbar-collapse{
+            margin-top:20px;
+            transition:margin 0.25s linear;
+          }
+
+          #menu.menu-follow>.navbar-brand{
+            margin-top:10px;
+            margin-bottom:10px;
+            transition:margin 0.25s linear;
+          }
+          
+          /*toggle between colors*/
+          #menu a {
+            font-size:15px;
+          }
+            #menu.menu-top a{
+              color:white;
+            }
+            #menu.menu-follow a{
+              color:black;
+            }
+          
+          /*chevron*/
+          i.fas{
+            font-size:12px;
+            margin-left:5px;
+          }
+          
+          /*for displaying menus on hover, needs to be both display block for transition
+          to take place*/
+          @media (min-width: 979px) {
+            #menu ul.navbar-nav li.dropdown:hover > .dropdown-menu {
+              height:fit-content;
+              visibility: visible;
+              opacity: 1;
+            }
+            #menu ul.navbar-nav li.dropdown > .dropdown-menu {
+              height:0px;
+              display: block;
+              opacity: 0;
+              visibility: hidden;
+              transition: visibility 0s, opacity 0.25s linear;
+            }
+            .dropdown-menu>.dropdown-divider{
+              margin-left:5px;
+              margin-right:5px;
+            }
+              #menu.menu-top ul.navbar-nav li.dropdown > .dropdown-menu{
+                background-color:black;
+                opacity:0.5;
+                color:white;
+              }
+              #menu.menu-follow ul.navbar-nav li.dropdown > .dropdown-menu{
+                color:black;
+              }
+          }
+        </style>
+    </head>
+    <body>
+        <nav id="menu" class="navbar navbar-expand-lg menu-top">
+            <a class="navbar-brand ml-3 mr-5" style="letter-spacing:1px; font-size:22px" href="#"><strong>UBC THUNDERBOTS</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown mr-2">
+                  <a class="nav-link" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About<i class="fas fa-chevron-down"></i></a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Our Mission</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Prospective Members</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown mr-2">
+                  <a class="nav-link" href="#" id="teamsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Teams<i class="fas fa-chevron-down"></i></a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Admin</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Mechatronics</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Software</a>
+                  </div>
+                </li>
+                <li class="nav-item mr-2">
+                  <a class="nav-link" href="#" id="demosButton" role="button">Demos</a>
+                </li>
+                <li class="nav-item dropdown mr-2">
+                  <a class="nav-link" href="#" id="sponsorDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sponsor<i class="fas fa-chevron-down"></i></a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Become A Sponsor</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Our Sponsors</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+              </ul>
+              <!--TODO: can be useful later for adding social media links <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form> -->
+            </div>
+        </nav>
+    </body>
+
+    <script>
+      $(function(){
+        if($(window).scrollTop() > 0){
+          $("#menu").removeClass("menu-top");
+          $("#menu").addClass("menu-follow");
+        }
+        else {
+          $("#menu").removeClass("menu-follow");
+          $("#menu").addClass("menu-top");
+        }
+
+        $(window).scroll(function(){
+          console.log($(window).scrollTop());
+          if($(window).scrollTop() > 0){
+            $("#menu").removeClass("menu-top");
+            $("#menu").addClass("menu-follow");
+          }
+          else {
+            $("#menu").removeClass("menu-follow");
+            $("#menu").addClass("menu-top");
+          }
+        })
+      })
+    </script>
+</html>
