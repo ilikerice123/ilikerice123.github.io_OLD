@@ -10,18 +10,26 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <style>
           body{
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
             /*font-family: 'Roboto', sans-serif;*/
             min-height:1000px;
-            background-color:grey;
+            /*temporary fix: there is a bit of white space between divs for some werid reason*/
+            background-color:white;
+            display:block;
+            margin: 0px;
+            padding:0px;
           }
 
           #menu.menu-top {
             /*xpos, ypos, blur, spread, color*/
-            box-shadow: inset 0px 120px 150px -90px rgb(0, 4, 29);
+            /* box-shadow: inset 0px 120px 150px -90px rgb(0, 4, 29); */
             background-color:transparent;
             max-height:90px;
             transition: max-height 0.25s linear;
+            position:absolute;
+            left:0px;
+            top:0px;
+            width:100%;
           }
 
           #menu.menu-follow{
@@ -63,9 +71,12 @@
             }
           
           /*chevron*/
-          i.fas{
+          .nav-link>i.fas{
             font-size:12px;
             margin-left:5px;
+          }
+          .btn>i.fab{
+            font-size:30px;
           }
           
           /*for displaying menus on hover, needs to be both display block for transition
@@ -96,6 +107,97 @@
                 color:black;
               }
           }
+
+          .title-page{
+            padding-top:20%;
+            text-align:center;
+            background: linear-gradient(to bottom, rgba(5,20,30,0.9) 0%, rgba(5,20,30,0.1) 100%), url("titlebackground.jpg");
+            /* background-image: url("IMG_2956.JPG"), linear-gradient(to bottom, rgba(5,20,30,0.9) 0%, rgba(5,20,30,0.1) 100%);
+            background-image: url("IMG_2956.JPG"), -moz-linear-gradient(to bottom, rgba(5,20,30,0.9) 0%, rgba(5,20,30,0.1) 100%);
+            background-image: url("IMG_2956.JPG"), -webkit-linear-gradient(to bottom, rgba(5,20,30,0.9) 0%, rgba(5,20,30,0.1) 100%); */
+            min-height:100vh;
+            background-attachment: fixed;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color:white;
+            margin-bottom:0px;
+            display:block;
+          }
+
+          .text-section{
+            margin-top:0px;
+            margin-bottom:0px;
+            background-color:white;
+            color:black;
+            padding-left:20vw;
+            padding-right:20vw;
+            padding-top:20vh;
+            padding-bottom:20vh;
+            font-size:20px;
+            text-align:center;
+            display:block;
+            width:100%;
+          }
+
+          .contact-us-section{
+            background: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0,0,0, 0.75)), url("contactusbackground.png");
+            padding-left:10vw;
+            padding-right:50vw;
+            background-attachment: fixed;
+            background-position:center;
+            background-repeat:no-repeat;
+            background-size:cover;
+            color:white;
+            margin-bottom:0px;
+            display:block;
+            padding-top:20vh;
+            padding-bottom:20vh;
+            width:100%;
+          }
+
+          .contact-us-section>p{
+            margin-top:30px;
+            margin-bottom:30px;
+            font-size:20px;
+          }
+
+          .underline{
+            padding-bottom:10px;
+            border-bottom: solid white 4px; 
+          }
+
+          .social-media-btn{
+            margin-top:-10px;
+            height:40px;
+            width:40px;
+            opacity:0.5;
+          }
+            .social-media-btn:hover{
+              opacity:1;
+              transition:opacity 0.5s;
+            }
+
+          .footer-section{
+            background-color:#222;
+            padding-top:5vh;
+            padding-bottom:5vh;
+            padding-left:10vw;
+            padding-right:10vw;
+            width:100%;
+          }
+
+          .footer-section .footer-title{
+            font-size: 22px;
+            color:white;
+          }
+
+          .footer-section .copyright{
+            font-size:12px;
+            color:white;
+            text-align:left;
+          }
+
         </style>
     </head>
     <body>
@@ -146,6 +248,40 @@
               </form> -->
             </div>
         </nav>
+        <div class="title-page">
+          <h1><strong>UBC Thunderbots</strong></h1>
+          <br>
+          <h3>Home of the soccer-playing robots</h3>
+        </div>
+        <div class="text-section">
+          <p>
+            We are an engineer student team based at the University of British Columbia. 
+            <br>
+            We welcome all students with a passion for robots to join one of our three sub-teams
+          </p>
+        </div>
+        <div class="contact-us-section">
+          <!-- TODO: Underline -->
+          <h1>
+            <strong class="underline">Contact Us</strong>
+          </h1>
+          <p>
+              Please contact us via facebook or email. Please be patient, we will get back to you as soon as possible.
+          </p>
+          <p>
+            <strong>Email: <a style="text-decoration:none; color:white" href="mailto:ubcrobocup@gmail.com">ubcrobocup@gmail.com</a></strong>
+          </p>
+          <!--onclick not that good but I wanted to keep the button lol-->
+          <button type="button" class="btn social-media-btn" onclick='window.location.href="https://www.facebook.com/ubcthunderbots"'>
+            <i class="fab fa-facebook-f"></i>
+          </button>
+        </div>
+        <div class="footer-section">
+          <div class="row">
+              <div class="col-md-6 footer-title"><strong>UBC THUNDERBOTS</strong></div>
+              <div class="col-md-6 copyright" style="text-align:right">© UBC Thunderbots 2018</div>
+          </div>
+        </div>
     </body>
 
     <script>
