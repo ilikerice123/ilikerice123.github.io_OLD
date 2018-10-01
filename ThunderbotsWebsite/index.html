@@ -78,7 +78,14 @@
           .btn>i.fab{
             font-size:30px;
           }
-          
+
+          #menu.menu-top .navbar-toggler>i{
+            color:white;
+          }
+          #menu.menu-follow .navbar-toggler>i{
+            color:black;
+          }
+
           /*for displaying menus on hover, needs to be both display block for transition
           to take place*/
           @media (min-width: 979px) {
@@ -107,14 +114,20 @@
                 color:black;
               }
           }
+          @media (max-width: 978px){
+            #menu #navbarSupportedContent{
+              background-color:white;
+              padding:15px;
+            }
+            #menu.menu-top #navbarSupportedContent a{
+              color:black;
+            }
+          }
 
           .title-page{
             padding-top:20%;
             text-align:center;
             background: linear-gradient(to bottom, rgba(5,20,30,0.9) 0%, rgba(5,20,30,0.1) 100%), url("titlebackground.jpg");
-            /* background-image: url("IMG_2956.JPG"), linear-gradient(to bottom, rgba(5,20,30,0.9) 0%, rgba(5,20,30,0.1) 100%);
-            background-image: url("IMG_2956.JPG"), -moz-linear-gradient(to bottom, rgba(5,20,30,0.9) 0%, rgba(5,20,30,0.1) 100%);
-            background-image: url("IMG_2956.JPG"), -webkit-linear-gradient(to bottom, rgba(5,20,30,0.9) 0%, rgba(5,20,30,0.1) 100%); */
             min-height:100vh;
             background-attachment: fixed;
             background-position:center;
@@ -204,7 +217,7 @@
         <nav id="menu" class="navbar navbar-expand-lg menu-top">
             <a class="navbar-brand ml-3 mr-5" style="letter-spacing:1px; font-size:22px" href="#"><strong>UBC THUNDERBOTS</strong></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+              <i class="fas fa-bars"></i>
             </button>
           
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
