@@ -7,189 +7,69 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="thunderbots.js"></script>
+        <link rel="stylesheet" href="thunderbots.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <style>
-          body{
-            font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
-            /*font-family: 'Roboto', sans-serif;*/
-            min-height:1000px;
-            /*temporary fix: there is a bit of white space between divs for some werid reason*/
-            background-color:white;
-            display:block;
-            margin: 0px;
-            padding:0px;
-          }
-
-          #menu.menu-top {
-            /*xpos, ypos, blur, spread, color*/
-            /* box-shadow: inset 0px 120px 150px -90px rgb(0, 4, 29); */
-            background-color:transparent;
-            max-height:90px;
-            transition: max-height 0.25s linear;
-            position:absolute;
-            left:0px;
-            top:0px;
-            width:100%;
-          }
-
-          #menu.menu-follow{
-            background-color:white;
-            box-shadow: 0px 0px 5px 1px rgb(37, 37, 37);
-            position:fixed;
-            left:0px;
-            top:0px;
-            width:100%;
-            max-height:65px;
-            transition: max-height 0.3s linear;
-          }
-
-          #menu.menu-top>.navbar-brand{
-            margin-top:30px;
-            margin-bottom:15px;
-            transition:margin 0.25s linear;
-            letter-spacing:1px; font-size:22px
-          }
-
-          #menu.menu-top>.navbar-collapse{
-            margin-top:20px;
-            transition:margin 0.25s linear;
-          }
-
-          #menu.menu-follow>.navbar-brand{
-            margin-top:10px;
-            margin-bottom:10px;
-            transition:margin 0.25s linear;
-          }
-          
-          /*toggle between colors*/
-          #menu a {
-            font-size:15px;
-          }
-            #menu.menu-top a{
-              color:white;
-            }
-            #menu.menu-follow a{
-              color:black;
-            }
-          
-          /*chevron*/
-          .nav-link>i.fas{
-            font-size:12px;
-            margin-left:5px;
-          }
-          /*facebook*/
-          .btn>i.fab{
-            font-size:30px;
-          }
-
-          #menu.menu-top .navbar-toggler>i{
-            color:white;
-          }
-          #menu.menu-follow .navbar-toggler>i{
-            color:black;
-          }
-
-          /*for displaying menus on hover, needs to be both display block for transition
-          to take place*/
-          @media (min-width: 979px) {
-            #menu ul.navbar-nav li.dropdown:hover > .dropdown-menu {
-              height:fit-content;
-              visibility: visible;
-              opacity: 1;
-            }
-            #menu ul.navbar-nav li.dropdown > .dropdown-menu {
-              height:0px;
-              display: block;
-              opacity: 0;
-              visibility: hidden;
-              transition: visibility 0s, opacity 0.25s linear;
-            }
-            .dropdown-menu>.dropdown-divider{
-              margin-left:5px;
-              margin-right:5px;
-            }
-              #menu.menu-top ul.navbar-nav li.dropdown > .dropdown-menu{
-                background-color:black;
-                opacity:0.5;
-                color:white;
-              }
-              #menu.menu-follow ul.navbar-nav li.dropdown > .dropdown-menu{
-                color:black;
-              }
-          }
-          @media (max-width: 978px){
-            #menu #navbarSupportedContent{
-              background-color:white;
-              padding:15px;
-            }
-            #menu.menu-top #navbarSupportedContent a{
-              color:black;
-            }
-
-            .text-section{
-              font-size:40px;
-            }
-            .contact-us-section>p{
-              font-size:40px;
-            }
-          }
-
-          .title-page{
-            padding-top:20%;
-            text-align:center;
+          #title-page-container{
             background: linear-gradient(to bottom, rgba(5,20,30,0.9) 0%, rgba(5,20,30,0.1) 100%), url("titlebackground.jpg");
             min-height:100vh;
             background-attachment: fixed;
             background-position:center;
             background-repeat: no-repeat;
             background-size: cover;
-            color:white;
             margin-bottom:0px;
-            display:block;
           }
 
-          .text-section{
-            margin-top:0px;
-            margin-bottom:0px;
+          #title-page{
+            padding-top:20%;
+            text-align:center;
+            color:white;
+          }
+
+          #text1-container{
             background-color:white;
             color:black;
+            margin-top:0px;
+            margin-bottom:0px;
+          }
+
+          #text1{
             padding-left:20vw;
             padding-right:20vw;
             padding-top:20vh;
             padding-bottom:20vh;
-            font-size:20px;
             text-align:center;
             display:block;
-            width:100%;
           }
-
-          .contact-us-section{
+          
+          #contact-us-container{
             background: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0,0,0, 0.75)), url("contactusbackground.png");
-            padding-left:10vw;
-            padding-right:50vw;
             background-attachment: fixed;
             background-position:center;
             background-repeat:no-repeat;
             background-size:cover;
             color:white;
             margin-bottom:0px;
-            display:block;
-            padding-top:20vh;
-            padding-bottom:20vh;
-            width:100%;
           }
 
-          .contact-us-section>p{
+          #contact-us{
+            padding-left:10vw;
+            padding-right:50vw;
+            padding-top:20vh;
+            padding-bottom:20vh;
+          }
+
+          .contact-us>p{
             margin-top:30px;
             margin-bottom:30px;
             font-size:20px;
           }
-
           .underline{
             padding-bottom:10px;
             border-bottom: solid white 4px; 
           }
-
+          
           .social-media-btn{
             margin-top:-10px;
             height:40px;
@@ -200,30 +80,10 @@
               opacity:1;
               transition:opacity 0.5s;
             }
-
-          .footer-section{
-            background-color:#222;
-            padding-top:5vh;
-            padding-bottom:5vh;
-            padding-left:10vw;
-            padding-right:10vw;
-            width:100%;
-          }
-
-          .footer-section .footer-title{
-            font-size: 22px;
-            color:white;
-          }
-
-          .footer-section .copyright{
-            font-size:12px;
-            color:white;
-            text-align:left;
-          }
-
         </style>
     </head>
     <body>
+        <!-- menu -->
         <nav id="menu" class="navbar navbar-expand-lg menu-top">
             <a class="navbar-brand ml-3 mr-5" href="#"><strong>UBC THUNDERBOTS</strong></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -271,64 +131,52 @@
               </form> -->
             </div>
         </nav>
-        <div class="title-page">
-          <h1><strong>UBC Thunderbots</strong></h1>
-          <br>
-          <h3>Home of the soccer-playing robots</h3>
-        </div>
-        <div class="text-section">
-          <p>
-            We are an engineer student team based at the University of British Columbia. 
+
+        <!-- title page -->
+        <div id="title-page-container" class="container-fluid">
+          <div id="title-page">
+            <h1><strong>UBC Thunderbots</strong></h1>
             <br>
-            We welcome all students with a passion for robots to join one of our three sub-teams
-          </p>
+            <h3>Home of the soccer-playing robots</h3>
+          </div>
         </div>
-        <div class="contact-us-section">
-          <!-- TODO: Underline -->
-          <h1>
-            <strong class="underline">Contact Us</strong>
-          </h1>
-          <p>
-              Please contact us via facebook or email. Please be patient, we will get back to you as soon as possible.
-          </p>
-          <p>
-            <strong>Email: <a style="text-decoration:none; color:white" href="mailto:ubcrobocup@gmail.com">ubcrobocup@gmail.com</a></strong>
-          </p>
-          <!--onclick not that good but I wanted to keep the button lol-->
-          <button type="button" class="btn social-media-btn" onclick='window.location.href="https://www.facebook.com/ubcthunderbots"'>
-            <i class="fab fa-facebook-f"></i>
-          </button>
+
+        <!-- section 1 -->
+        <div id="text1-container" class="container-fluid">
+          <div id="text1">
+            <p>
+              We are an engineer student team based at the University of British Columbia. 
+              <br>
+              We welcome all students with a passion for robots to join one of our three sub-teams
+            </p>
+          </div>
         </div>
-        <div class="footer-section">
-          <div class="row">
-              <div class="col-md-6 footer-title"><strong>UBC THUNDERBOTS</strong></div>
-              <div class="col-md-6 copyright" style="text-align:right">© UBC Thunderbots 2018</div>
+
+        <!--section 2-->
+        <div id="contact-us-container" class="container-fluid">
+          <div id="contact-us">
+            <h1>
+              <strong class="underline">Contact Us</strong>
+            </h1>
+            <p>
+                Please contact us via facebook or email. Please be patient, we will get back to you as soon as possible.
+            </p>
+            <p>
+              <strong>Email: <a style="text-decoration:none; color:white" href="mailto:ubcrobocup@gmail.com">ubcrobocup@gmail.com</a></strong>
+            </p>
+            <!--onclick not that good but I wanted to keep the button lol-->
+            <button type="button" class="btn social-media-btn" onclick='window.location.href="https://www.facebook.com/ubcthunderbots"'>
+              <i class="fab fa-facebook-f"></i>
+            </button>
+          </div>
+
+          <!--footer-->
+          <div id="footer" class="footer-section">
+            <div class="row">
+                <div class="col-md-6 footer-title"><strong>UBC THUNDERBOTS</strong></div>
+                <div class="col-md-6 copyright" style="text-align:right">© UBC Thunderbots 2018</div>
+            </div>
           </div>
         </div>
     </body>
-
-    <script>
-      $(function(){
-        if($(window).scrollTop() > 0){
-          $("#menu").removeClass("menu-top");
-          $("#menu").addClass("menu-follow");
-        }
-        else {
-          $("#menu").removeClass("menu-follow");
-          $("#menu").addClass("menu-top");
-        }
-
-        $(window).scroll(function(){
-          console.log($(window).scrollTop());
-          if($(window).scrollTop() > 0){
-            $("#menu").removeClass("menu-top");
-            $("#menu").addClass("menu-follow");
-          }
-          else {
-            $("#menu").removeClass("menu-follow");
-            $("#menu").addClass("menu-top");
-          }
-        })
-      })
-    </script>
 </html>
