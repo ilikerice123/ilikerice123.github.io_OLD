@@ -19,21 +19,18 @@
             background-repeat: no-repeat;
             background-size: cover;
             margin-bottom:0px;
-          }
-
-          #title-page{
             padding-top:20%;
+          }
+          #title-page{
             text-align:center;
             color:white;
           }
-
           #text1-container{
             background-color:white;
             color:black;
             margin-top:0px;
             margin-bottom:0px;
           }
-
           #text1{
             padding-left:20vw;
             padding-right:20vw;
@@ -42,7 +39,6 @@
             text-align:center;
             display:block;
           }
-          
           #contact-us-container{
             background: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0,0,0, 0.75)), url("contactusbackground.png");
             background-attachment: fixed;
@@ -51,25 +47,38 @@
             background-size:cover;
             color:white;
             margin-bottom:0px;
+            
           }
-
           #contact-us{
             padding-left:10vw;
             padding-right:50vw;
             padding-top:20vh;
             padding-bottom:20vh;
           }
-
-          .contact-us>p{
+          #contact-us>p{
+            font-size:20px;
             margin-top:30px;
             margin-bottom:30px;
-            font-size:20px;
           }
+          @media only screen and (max-width: 990px){
+            #title-page-container{
+              padding-top:50%;
+            }
+            #text1-container{
+              font-size:4vw;
+            }
+            #contact-us{
+              padding-right:10vw;
+            }
+            #contact-us>p{
+              font-size:4vw;
+            }
+          }
+
           .underline{
             padding-bottom:10px;
-            border-bottom: solid white 4px; 
+            border-bottom: solid white 4px;
           }
-          
           .social-media-btn{
             margin-top:-10px;
             height:40px;
@@ -135,7 +144,7 @@
         <!-- title page -->
         <div id="title-page-container" class="container-fluid">
           <div id="title-page">
-            <h1><strong>UBC Thunderbots</strong></h1>
+            <h1><id="title-text" strong>UBC Thunderbots</strong></h1>
             <br>
             <h3>Home of the soccer-playing robots</h3>
           </div>
