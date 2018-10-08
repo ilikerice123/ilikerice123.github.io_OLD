@@ -95,37 +95,43 @@ body{
         transition: visibility 0s, opacity 0.25s linear;
     }
         #menu.menu-top ul.navbar-nav li.dropdown > .dropdown-menu{
-            background-color:black;
             opacity: 0.5;
             color:white;
             transition: opacity 0.25s linear;
+        }
+        #menu.menu-follow ul.navbar-nav li.dropdown > .dropdown-menu{
+            color:black;
         }
         #menu.menu-top ul.navbar-nav li.dropdown > .dropdown-menu > a:hover {
             background-color: grey;
             background-image: none;
         }
 
-        #menu.menu-follow ul.navbar-nav li.dropdown > .dropdown-menu{
-            color:black;
-        }
-
     .dropdown-menu>.dropdown-divider{
         margin-left:5px;
         margin-right:5px;
     }
-
     .container-fluid{
         font-size:22px;
     }
 }
 
 @media only screen and (max-width: 990px){
+    /* TODO: some way of making the menu bigger without fucking up the look when the user clicks the 
+          hamburger, since adding padding to #menu does not work rn */
+    /* #menu {
+        padding-top:3vh;
+        padding-bottom:3vh;
+    } */
     #menu #navbarSupportedContent{
         background-color:white;
         padding:15px;
     }
     #menu.menu-top #navbarSupportedContent a{
         color:black;
+    }
+    #menu>button.navbar-toggler{
+        font-size:5vw;
     }
 }
 
