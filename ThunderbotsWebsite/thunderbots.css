@@ -151,10 +151,19 @@ br{
         padding-top:3vh;
         padding-bottom:3vh;
     } */
+    .nav-link>i.fas{
+        font-size:3vw;
+    }
+
     #menu #navbarSupportedContent{
         background-color:white;
         padding:15px;
+        font-size:3vw;
     }
+    #menu ul.navbar-nav li.dropdown > .dropdown-menu {
+        font-size:3vw;
+    }
+
     #menu.menu-top #navbarSupportedContent a{
         color:black;
     }
