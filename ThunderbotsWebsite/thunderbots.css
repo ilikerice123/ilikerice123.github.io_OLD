@@ -1,8 +1,10 @@
+/**
+#title-page and #title-page-container are special ids
 
+*/
 body{
     font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
     /*font-family: 'Roboto', sans-serif;*/
-    min-height:1000px;
     /*temporary fix: there is a bit of white space between divs for some werid reason*/
     background-color:white;
     display:block;
@@ -78,6 +80,32 @@ body{
     color:black;
 }
 
+.text-container{
+    background-color:white;
+    color:black;
+    margin-top:0px;
+    margin-bottom:0px;
+}
+
+.text-section{
+    padding-left:15vw;
+    padding-right:15vw;
+    padding-top:10vh;
+    padding-bottom:10vh;
+    text-align:left;
+    display:block;
+}
+
+.plain-text{
+    line-height:150%;
+    font-size:18px;
+    color:rgb(24, 24, 24);
+}
+
+br{
+    margin-top:20px;
+}
+
   /*for displaying menus on hover, needs to be both display block for transition
   to take place*/
 @media only screen and (min-width: 991px) {
@@ -97,7 +125,7 @@ body{
         #menu.menu-top ul.navbar-nav li.dropdown > .dropdown-menu{
             opacity: 0.5;
             color:white;
-            transition: opacity 0.25s linear;
+            background-color:rgb(0, 0, 0);
         }
         #menu.menu-follow ul.navbar-nav li.dropdown > .dropdown-menu{
             color:black;
@@ -131,6 +159,21 @@ body{
         color:black;
     }
     #menu>button.navbar-toggler{
+        font-size:5vw;
+    }
+    .text-container{
+        font-size:4vw;
+    }
+    .plain-text{
+        font-size:4vw;
+    }
+    #title-page-container{
+        padding-top:50%;
+    }
+    #title-page>h1{
+        font-size:9vw;
+    }
+    #title-page>h3{
         font-size:5vw;
     }
 }

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--<span class="sr-only">(current)</span>-->
+<html lang="en-US">
+    <meta charset="UTF-8">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="thunderbots.js"></script>
+        <link rel="stylesheet" href="thunderbots.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <style>
+        #title-page-container{
+            background: linear-gradient(to bottom, rgba(5,20,30,0.9) 0%, rgba(5,20,30,0.1) 100%), url("placeholder.JPG");
+            min-height:75vh;
+            background-attachment: fixed;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-bottom:0px;
+            padding-top:20%;
+            padding-left:5vw;
+            padding-right:5vw;
+        }
+        #title-page{
+            text-align:center;
+            color:white;
+        }
+        .blockquote{
+            font-size:28px;
+            letter-spacing: -1px;
+            color:rgb(25, 25, 31);
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 990px){
+            .blockquote{
+                font-size:5vw;
+                margin-bottom:5vh;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <!-- TODO: let menu be created in thunderbots.js in the future-->
+        <!-- menu -->
+        <nav id="menu" class="navbar navbar-expand-lg menu-top">
+            <a class="navbar-brand ml-3 mr-5" href="http://ilikerice123.github.io/ThunderbotsWebsite/"><strong>UBC THUNDERBOTS</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown mr-2">
+                    <a class="nav-link" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="http://ilikerice123.github.io/ThunderbotsWebsite/mission.html">Our Mission</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="http://ilikerice123.github.io/ThunderbotsWebsite/prospectivemembers.html">Prospective Members</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown mr-2">
+                    <a class="nav-link" href="#" id="teamsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Teams<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Admin</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Mechatronics</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Software</a>
+                    </div>
+                </li>
+                <li class="nav-item mr-2">
+                    <a class="nav-link" href="#" id="demosButton" role="button">Demos</a>
+                </li>
+                <li class="nav-item dropdown mr-2">
+                    <a class="nav-link" href="#" id="sponsorDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sponsor<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Become A Sponsor</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Our Sponsors</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                </ul>
+                <!--TODO: can be useful later for adding social media links <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form> -->
+            </div>
+        </nav>
+        
+        <div id="title-page-container">
+            <div id="title-page">
+                <h1><strong id="title-text">Our Mission</strong></h1>
+            </div>
+        </div>
+        <div class="text-container">
+            <div class="text-section">
+                <blockquote class="blockquote">
+                    <p class="mb-0"><strong><i>"Provide an inclusive learning and mentoring environment for students at UBC to expand their passions’ for robotics, automation and artificial intelligence"</i></strong></p>
+                </blockquote>
+                <p class="plain-text">
+                    Our aim is to use the well loved sport of soccer to generate interest and 
+                    enthusiasm for robotics within the UBC and BC communities. We challenge 
+                    members to seek out, implement, and create novel solutions to complex, 
+                    multidisciplinary engineering problems. Our members, through their 
+                    experience on Thunderbots, develop skills needed to quickly integrate 
+                    into any team and make meaningful contributions. We also strive to 
+                    introduce robotics to young students so they can begin to consider 
+                    pursing innovation in engineering.
+                </p>
+            </div>
+        </div>
+        <div id="footer" class="footer-section">
+            <div class="row">
+                <div class="col-md-6 footer-title"><strong>UBC THUNDERBOTS</strong></div>
+                <div class="col-md-6 copyright" style="text-align:right">© UBC Thunderbots 2018</div>
+            </div>
+        </div>
+    </body>
+</html>

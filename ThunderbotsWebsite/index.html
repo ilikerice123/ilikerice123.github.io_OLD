@@ -20,24 +20,19 @@
             background-size: cover;
             margin-bottom:0px;
             padding-top:20%;
+            padding-left:5vw;
+            padding-right:5vw;
           }
           #title-page{
             text-align:center;
             color:white;
           }
-          #text1-container{
-            background-color:white;
-            color:black;
-            margin-top:0px;
-            margin-bottom:0px;
-          }
-          #text1{
-            padding-left:20vw;
-            padding-right:20vw;
+          #description{
             padding-top:20vh;
             padding-bottom:20vh;
-            text-align:center;
-            display:block;
+            text-align: center;
+            padding-left:20vw;
+            padding-right:20vw;
           }
           #contact-us-container{
             background: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0,0,0, 0.75)), url("contactusbackground.png");
@@ -62,18 +57,6 @@
           }
 
           @media only screen and (max-width: 990px){
-            #title-page-container{
-              padding-top:50%;
-            }
-            #title-page>h1{
-              font-size:9vw;
-            }
-            #title-page>h3{
-              font-size:5vw;
-            }
-            #text1-container{
-              font-size:4vw;
-            }
             #contact-us{
               padding-right:10vw;
             }
@@ -99,9 +82,10 @@
         </style>
     </head>
     <body>
+        <!-- TODO: let menu be created in thunderbots.js in the future-->
         <!-- menu -->
         <nav id="menu" class="navbar navbar-expand-lg menu-top">
-            <a class="navbar-brand ml-3 mr-5" href="#"><strong>UBC THUNDERBOTS</strong></a>
+            <a class="navbar-brand ml-3 mr-5" href="http://ilikerice123.github.io/ThunderbotsWebsite/"><strong>UBC THUNDERBOTS</strong></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <i class="fas fa-bars"></i>
             </button>
@@ -111,9 +95,9 @@
                 <li class="nav-item dropdown mr-2">
                   <a class="nav-link" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About<i class="fas fa-chevron-down"></i></a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Our Mission</a>
+                    <a class="dropdown-item" href="http://ilikerice123.github.io/ThunderbotsWebsite/mission.html">Our Mission</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Prospective Members</a>
+                    <a class="dropdown-item" href="http://ilikerice123.github.io/ThunderbotsWebsite/prospectivemembers.html">Prospective Members</a>
                   </div>
                 </li>
                 <li class="nav-item dropdown mr-2">
@@ -151,15 +135,15 @@
         <!-- title page -->
         <div id="title-page-container" class="container-fluid">
           <div id="title-page">
-            <h1><id="title-text" strong>UBC Thunderbots</strong></h1>
+            <h1><strong id="title-text">UBC Thunderbots</strong></h1>
             <br>
             <h3>Home of the soccer-playing robots</h3>
           </div>
         </div>
 
         <!-- section 1 -->
-        <div id="text1-container" class="container-fluid">
-          <div id="text1">
+        <div class="container-fluid text-container">
+          <div id="description" class="text-section">
             <p>
               We are an engineer student team based at the University of British Columbia. 
               <br>
