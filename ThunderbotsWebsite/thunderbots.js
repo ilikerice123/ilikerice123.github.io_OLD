@@ -35,8 +35,8 @@ function initMenu(){
 //edit this part to add more to the menu
   var about = {"name" : "About", "link":"#"};
   about["contents"] = [];
-  about["contents"].push({"name":"Our Mission", "link":"http://ilikerice123.github.io/ThunderbotsWebsite/mission.html"});
-  about["contents"].push({"name":"Prospective Members", "link":"http://ilikerice123.github.io/ThunderbotsWebsite/prospectivemembers.html"});
+  about["contents"].push({"name":"Our Mission", "link":"http://ilikerice123.github.io/ThunderbotsWebsite/Mission/"});
+  about["contents"].push({"name":"Prospective Members", "link":"http://ilikerice123.github.io/ThunderbotsWebsite/ProspectiveMembers"});
   menuContents.append(createDropdown(about));
 
   var teams = {"name" : "Teams", "link":"#"};
