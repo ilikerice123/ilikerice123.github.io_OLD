@@ -41,21 +41,21 @@ function initMenu(){
 
   var teams = {"name" : "Teams", "link":"#"};
   teams["contents"] = [];
-  teams["contents"].push({"name": "Admin", "link":"#"});
-  teams["contents"].push({"name": "Mechatronics", "link":"#"});
-  teams["contents"].push({"name": "Software", "link":"#"});
+  teams["contents"].push({"name": "Admin", "link":"http://ilikerice123.github.io/ThunderbotsWebsite/Admin"});
+  teams["contents"].push({"name": "Mechatronics", "link":"http://ilikerice123.github.io/ThunderbotsWebsite/Mechatronics"});
+  teams["contents"].push({"name": "Software", "link":"http://ilikerice123.github.io/ThunderbotsWebsite/Software"});
   menuContents.append(createDropdown(teams));
 
-  var demos = {"name" : "Demos", "link":"#"};
+  var demos = {"name" : "Demos", "link":"http://ilikerice123.github.io/ThunderbotsWebsite/Demos"};
   menuContents.append(createDropdown(demos));
 
   var sponsor = {"name":"Sponsor", "link": "#"};
   sponsor["contents"] = [];
-  sponsor["contents"].push({"name": "Become A Sponsor", "link":"#"});
-  sponsor["contents"].push({"name": "Our Sponsors", "link":"#"});
+  sponsor["contents"].push({"name": "Become A Sponsor", "link":"http://ilikerice123.github.io/ThunderbotsWebsite/SponsorUs"});
+  sponsor["contents"].push({"name": "Our Sponsors", "link":"http://ilikerice123.github.io/ThunderbotsWebsite/OurSponsors"});
   menuContents.append(createDropdown(sponsor));
 
-  var contact = {"name" : "Contact", "link":"#"};
+  var contact = {"name" : "Contact", "link":"http://ilikerice123.github.io/ThunderbotsWebsite/ContactUs"};
   menuContents.append(createDropdown(contact));
 
   var menuContentWrapper = $('<div></div>',{
