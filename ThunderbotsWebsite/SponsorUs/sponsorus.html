@@ -7,12 +7,12 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script src="thunderbots.js"></script>
-        <link rel="stylesheet" href="thunderbots.css">
+        <script src="../thunderbots.js"></script>
+        <link rel="stylesheet" href="../thunderbots.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <style>
         #title-page-container{
-            background: linear-gradient(to bottom, rgba(5,20,30,0.9) 0%, rgba(5,20,30,0.1) 100%), url("img/placeholder.JPG");
+            background: linear-gradient(to bottom, rgba(5,20,30,0.9) 0%, rgba(5,20,30,0.1) 100%), url("../img/placeholder.JPG");
             min-height:75vh;
             background-attachment: fixed;
             background-position:center;
@@ -27,42 +27,42 @@
             text-align:center;
             color:white;
         }
-        .blockquote{
-            font-size:28px;
-            letter-spacing: -1px;
-            color:rgb(25, 25, 31);
-            text-align: center;
-        }
 
-        @media only screen and (max-width: 990px){
-            .blockquote{
-                font-size:5vw;
-                margin-bottom:5vh;
-            }
+        #sponsorship{
+            text-decoration: none;
+            color:rgba(25,25,25);
+            text-align:center;
+            font-size:26px;
+            padding:auto;
+            width:100%;
+            transition:color linear 0.25s;
+        }
+        #sponsorship:hover{
+            text-decoration: underline;
+            color:rgb(75, 75, 75);
+            cursor:pointer;
         }
         </style>
     </head>
     <body>
         <div id="title-page-container">
             <div id="title-page">
-                <h1><strong id="title-text">Our Mission</strong></h1>
+                <h1><strong id="title-text">Sponsor</strong></h1>
             </div>
         </div>
         <div class="text-container">
             <div class="text-section">
-                <blockquote class="blockquote">
-                    <p class="mb-0"><strong><i>"Provide an inclusive learning and mentoring environment for students at UBC to expand their passions’ for robotics, automation and artificial intelligence"</i></strong></p>
-                </blockquote>
+                <h2><strong>Exposure</strong></h2>
+                <br>
                 <p class="plain-text">
-                    Our aim is to use the well loved sport of soccer to generate interest and 
-                    enthusiasm for robotics within the UBC and BC communities. We challenge 
-                    members to seek out, implement, and create novel solutions to complex, 
-                    multidisciplinary engineering problems. Our members, through their 
-                    experience on Thunderbots, develop skills needed to quickly integrate 
-                    into any team and make meaningful contributions. We also strive to 
-                    introduce robotics to young students so they can begin to consider 
-                    pursing innovation in engineering.
+                    As a sponsor, you have the unique opportunity to empower a diverse group of student talent. Thunderbots selects top UBC students in order to compete on an international stage each year at RoboCup International. The focus moving forward is the design of an entirely new fleet of robots that will allow for greater accuracy and improved robustness. With your help we will be able to achieve this goal.
+                    <br><br>
+                    As a member of our sponsor community your logo will also be displayed on at our competition and on our social media (dependent on the level of sponsorship). Competition units around 3000 participants from 40 countries all interested in futures in robotics and AI. Further details can be found in the Sponsorship Package.
+                    <br><br>
+                    Contact <a href="mailto:robocup@ece.ubc.ca">robocup@ece.ubc.ca</a> if you have any questions about this opportunity.
+                    <br><br>
                 </p>
+                <a href="" id="sponsorship"><strong>Sponsorship Package</strong></a>
             </div>
         </div>
         <div id="footer" class="footer-section">

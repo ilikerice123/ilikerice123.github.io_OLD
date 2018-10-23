@@ -7,12 +7,12 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script src="thunderbots.js"></script>
-        <link rel="stylesheet" href="thunderbots.css">
+        <script src="../thunderbots.js"></script>
+        <link rel="stylesheet" href="../thunderbots.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <style>
         #title-page-container{
-            background: linear-gradient(to bottom, rgba(5,20,30,0.9) 0%, rgba(5,20,30,0.1) 100%), url("img/placeholder.JPG");
+            background: linear-gradient(to bottom, rgba(5,20,30,0.9) 0%, rgba(5,20,30,0.1) 100%), url("../img/placeholder.JPG");
             min-height:75vh;
             background-attachment: fixed;
             background-position:center;
@@ -27,33 +27,42 @@
             text-align:center;
             color:white;
         }
+        .blockquote{
+            font-size:28px;
+            letter-spacing: -1px;
+            color:rgb(25, 25, 31);
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 990px){
+            .blockquote{
+                font-size:5vw;
+                margin-bottom:5vh;
+            }
+        }
         </style>
     </head>
     <body>
         <div id="title-page-container">
             <div id="title-page">
-                <h1><strong id="title-text">Contact</strong></h1>
+                <h1><strong id="title-text">Our Mission</strong></h1>
             </div>
         </div>
         <div class="text-container">
             <div class="text-section">
+                <blockquote class="blockquote">
+                    <p class="mb-0"><strong><i>"Provide an inclusive learning and mentoring environment for students at UBC to expand their passions’ for robotics, automation and artificial intelligence"</i></strong></p>
+                </blockquote>
                 <p class="plain-text">
-                    <h6><strong>E-mail:</strong></h6>
-                    <a href="mailto:ubcrobocup@gmail.com">ubcrobocup@gmail.com</a>
-                    <br><br>
-                    <h6><strong>Mailing Address:</strong></h6>
-                    <address>
-                        UBC Robot Soccer Team<br>
-                        Electrical and Computer Engineering<br>
-                        University of British Columbia<br>
-                        Macleod building – Room 247<br>
-                        2356 Main Mall<br>
-                        Vancouver, B.C.,<br>
-                        Canada, V6T 1Z4<br>
-                    </address>
+                    Our aim is to use the well loved sport of soccer to generate interest and 
+                    enthusiasm for robotics within the UBC and BC communities. We challenge 
+                    members to seek out, implement, and create novel solutions to complex, 
+                    multidisciplinary engineering problems. Our members, through their 
+                    experience on Thunderbots, develop skills needed to quickly integrate 
+                    into any team and make meaningful contributions. We also strive to 
+                    introduce robotics to young students so they can begin to consider 
+                    pursing innovation in engineering.
                 </p>
-                <iframe src="http://maps.google.ca/maps?f=d&source=s_d&saddr=49.262316,-123.248418&daddr=&hl=en&geocode=&sll=49.262057,-123.24818&sspn=0.003781,0.009645&vpsrc=6&gl=ca&mra=mift&mrsp=0&sz=17&ie=UTF8&ll=49.262057,-123.24818&spn=0.003781,0.009645&t=m&output=embed" width="450" height="350" frameborder="0" scrolling="no">
-                </iframe>
             </div>
         </div>
         <div id="footer" class="footer-section">
